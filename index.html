@@ -27,6 +27,7 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
   <body>
@@ -38,7 +39,7 @@
              <div class="currentWeather">
                 <div class="currentIcon"><i class="fa-solid fa-cloud-bolt"></i></div>
                 <div class="currentTemperature">
-                  <span id = current-temperature>28 </span>
+                  <span id = current-temperature >28 </span>
                   <div class="celsiiFarenheit">
                     <span id="celsii">°C/</span>
                     <span class="farengeit" id="farenheit" href="">°F </span> 
@@ -55,13 +56,14 @@
               <input class="changeCity" id="change-city-input" type="text"  placeholder="Change City" autocomplete="off">
              <input class ="changeCitySubmit"type="submit" value="✈">
             </form>
+            <button class="myLocation" id = "my-location">  My Location ......<i class="fa-solid fa-location-dot"></i></button>
               <div class="realFeelPrecipitationlWindHumidity">
 
                 <ul> 
-                  <li class="realFeel">RealFeel - 28°  </li>
-                  <li class="precipitation">Precipitation - 66%</li>
-                  <li class="wind">Wind - 9km/hour</li>
-                  <li class="humidity">Humidity - 60%</li></ul></div>
+                  <li class="realFeel"  >Feels Like - <span id = "real-feel">28°</span>  </li>
+                  <li class="pressure">Pressure - <span id ="pressure">660</span> hPa</li>
+                  <li class="wind">Wind - <span id="wind-speed">9</span> km/hour</li>
+                  <li class="humidity">Humidity - <span id="humidity">60</span> %</li></ul></div>
                   
             </div></div>
             <hr class="line">
