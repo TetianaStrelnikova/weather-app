@@ -57,7 +57,6 @@ function changeCity(event) {
 
 //done,get response from axis and change HTML temperature...
 function searchTemperature(response) {
-  event.preventDefault();
   //temperature
   let celsiiTemperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#current-temperature");
@@ -107,30 +106,23 @@ function showCurrentPositionTemperature(response) {
   let myLocationCity = document.querySelector("#current-city");
   myLocationCity.innerHTML = `${response.data.name}`;
 
+  //real feel
+  let locationrealFeel = Math.round(response.data.main.feels_like);
+  let currentlocationRealFeel = document.querySelector("#real-feel");
+  currentlocationRealFeel.innerHTML = `${locationrealFeel}`;
+  //humidity
+  let locationhumidity = response.data.main.humidity;
+  let currentlocationHumidity = document.querySelector("#humidity");
+  currentlocationHumidity.innerHTML = `${locationhumidity}`;
+  //wind
+  let locationwindSpeed = response.data.wind.speed;
+  let currentlocationWindSpeed = document.querySelector("#wind-speed");
+  currentlocationWindSpeed.innerHTML = `${locationwindSpeed}`;
 
-
- //real feel
- let locationrealFeel = Math.round(response.data.main.feels_like);
- let currentlocationRealFeel = document.querySelector("#real-feel");
- currentlocationRealFeel.innerHTML = `${locationrealFeel}`;
- //humidity
- let locationhumidity = response.data.main.humidity;
- let currentlocationHumidity = document.querySelector("#humidity");
- currentlocationHumidity.innerHTML = `${locationhumidity}`;
- //wind
- let locationwindSpeed = response.data.wind.speed;
- let currentlocationWindSpeed = document.querySelector("#wind-speed");
- currentlocationWindSpeed.innerHTML = `${locationwindSpeed}`;
-
- //pressure
- let locationpressure = response.data.main.pressure;
- let currentlocationPressure = document.querySelector("#pressure");
- currentlocationPressure.innerHTML = `${locationpressure}`;
-
-
-
-
-
+  //pressure
+  let locationpressure = response.data.main.pressure;
+  let currentlocationPressure = document.querySelector("#pressure");
+  currentlocationPressure.innerHTML = `${locationpressure}`;
 }
 function myPosition(position) {
   console.log(position);
