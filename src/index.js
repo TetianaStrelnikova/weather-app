@@ -55,34 +55,75 @@ function changeCity(event) {
   newCity.innerHTML = `${currentCityInput.value}`;
 }
 
-  //done,get response from axis and change HTML temperature...
+//done,get response from axis and change HTML temperature...
   function searchTemperature(response) {
-  //temperature
+//temperature
   let citycelsiiTemperature = Math.round(response.data.main.temp);
   let citycurrentTemperature = document.querySelector("#current-temperature");
   citycurrentTemperature.innerHTML = `${citycelsiiTemperature}`;
-  //real feel
+//real feel
   let cityrealFeel = Math.round(response.data.main.feels_like);
   let citycurrentRealFeel = document.querySelector("#real-feel");
   citycurrentRealFeel.innerHTML = `${cityrealFeel}`;
-  //humidity
+//humidity
   let cityhumidity = response.data.main.humidity;
   let citycurrentHumidity = document.querySelector("#humidity");
   citycurrentHumidity.innerHTML = `${cityhumidity}`;
-  //wind
+//wind
   let citywindSpeed = response.data.wind.speed;
   let citycurrentWindSpeed = document.querySelector("#wind-speed");
   citycurrentWindSpeed.innerHTML = `${citywindSpeed}`;
 
-  //pressure
+//pressure
   let citypressure = response.data.main.pressure;
   let citycurrentPressure = document.querySelector("#pressure");
   citycurrentPressure.innerHTML = `${citypressure}`;
   console.log(response.data.weather[0].description);
-  //weather description
+//weather description
    let cityweatherDescription = document.querySelector("#weather-description");
    cityweatherDescription.innerHTML = `${response.data.weather[0].description}`;
-}
+//weather icon update
+  let locationIdIcon = response.data.weather[0].icon;
+ console.log(response.data.weather[0].icon);
+  if (locationIdIcon==="01d"){document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-sun");
+      } else {
+    if (locationIdIcon==="01n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-moon");
+      } else {
+    if (locationIdIcon==="02d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-sun");
+      } else {
+    if (locationIdIcon==="02n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-moon");
+      } else {
+    if  (locationIdIcon==="03d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud");
+      } else {
+    if (locationIdIcon==="03n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud");  
+    } else {
+      if (locationIdIcon==="04d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-sun");  
+    } else {
+      if (locationIdIcon==="04n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-moon");  
+    } else {
+      if (locationIdIcon==="09d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-showers-heavy");  
+    } else {
+      if (locationIdIcon==="09n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-moon-rain");  
+    } else {
+      if (locationIdIcon==="10d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-sun-rain");  
+    } else {
+      if (locationIdIcon==="10n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-rain");  
+    } else {
+      if (locationIdIcon==="11d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-bolt");  
+    } else {
+      if (locationIdIcon==="11n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-bolt");  
+    } else {
+      if (locationIdIcon==="13d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-snowflake");  
+    } else {
+      if (locationIdIcon==="13n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-snowflake");  
+    } else {
+      if (locationIdIcon==="50d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-smog");  
+    } else {
+      if (locationIdIcon==="50n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-smog");  
+    }}}}}}}}}}}}}}}}}}
+ 
+ ;}
+
 //done get weather data from the api
 function getTemp(event) {
   event.preventDefault();
@@ -101,16 +142,14 @@ currentCity.addEventListener("submit", getTemp);
 
 function showCurrentPositionTemperature(response) {
   console.log(response);
+  //location temperature
   let currentPositionCelsiiTemperature = Math.round(response.data.main.temp);
-  let showCurrentPositionCelsiiTemperature = document.querySelector(
-    "#current-temperature"
-  );
+  let showCurrentPositionCelsiiTemperature = document.querySelector("#current-temperature");
   showCurrentPositionCelsiiTemperature.innerHTML = `${currentPositionCelsiiTemperature}`;
-  console.log(response.data.name);
+  //city on this geolocation
   let myLocationCity = document.querySelector("#current-city");
   myLocationCity.innerHTML = `${response.data.name}`;
   //weather description
-  console.log(response.data.weather[0].description);
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = `${response.data.weather[0].description}`;
   //real feel
@@ -130,10 +169,51 @@ function showCurrentPositionTemperature(response) {
   let currentlocationPressure = document.querySelector("#pressure");
   currentlocationPressure.innerHTML = `${locationpressure}`;
   //weather description
-  console.log(response.data.weather[0].description);
   let locationweatherDescription = document.querySelector("#weather-description");
   locationweatherDescription.innerHTML = `${response.data.weather[0].description}`;
-}
+
+//icon
+let locationIdIcon1 = response.data.weather[0].icon;
+
+  if (locationIdIcon1==="01d"){document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-sun");
+      } else {
+    if (locationIdIcon1==="01n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-moon");
+      } else {
+    if (locationIdIcon1==="02d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-sun");
+      } else {
+    if (locationIdIcon1==="02n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-moon");
+      } else {
+    if  (locationIdIcon1==="03d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud");
+      } else {
+    if (locationIdIcon1==="03n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud");  
+    } else {
+      if (locationIdIcon1==="04d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-sun");  
+    } else {
+      if (locationIdIcon1==="04n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-moon");  
+    } else {
+      if (locationIdIcon1==="09d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-showers-heavy");  
+    } else {
+      if (locationIdIcon1==="09n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-moon-rain");  
+    } else {
+      if (locationIdIcon1==="10d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-sun-rain");  
+    } else {
+      if (locationIdIcon1==="10n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-rain");  
+    } else {
+      if (locationIdIcon1==="11d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-bolt");  
+    } else {
+      if (locationIdIcon1==="11n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-bolt");  
+    } else {
+      if (locationIdIcon1==="13d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-snowflake");  
+    } else {
+      if (locationIdIcon1==="13n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-snowflake");  
+    } else {
+      if (locationIdIcon1==="50d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-smog");  
+    } else {
+      if (locationIdIcon1==="50n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-smog");  
+    }}}}}}}}}}}}}}}}}}
+ 
+  
+  };
 function myPosition(position) {
   console.log(position);
   let lat = Math.round(position.coords.latitude);
@@ -183,7 +263,6 @@ function changeToCelsii(event) {
 let celsiiButton = document.querySelector("#celsii");
 celsiiButton.addEventListener("click", changeToCelsii);
 
-//current city temperature search and innerHTML
 
-//let currentCity = document.querySelector("#change-city-form");
-//currentCity.addEventListener("submit", changeCity);
+
+    
