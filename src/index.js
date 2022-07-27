@@ -55,29 +55,33 @@ function changeCity(event) {
   newCity.innerHTML = `${currentCityInput.value}`;
 }
 
-//done,get response from axis and change HTML temperature...
-function searchTemperature(response) {
+  //done,get response from axis and change HTML temperature...
+  function searchTemperature(response) {
   //temperature
-  let celsiiTemperature = Math.round(response.data.main.temp);
-  let currentTemperature = document.querySelector("#current-temperature");
-  currentTemperature.innerHTML = `${celsiiTemperature}`;
+  let citycelsiiTemperature = Math.round(response.data.main.temp);
+  let citycurrentTemperature = document.querySelector("#current-temperature");
+  citycurrentTemperature.innerHTML = `${citycelsiiTemperature}`;
   //real feel
-  let realFeel = Math.round(response.data.main.feels_like);
-  let currentRealFeel = document.querySelector("#real-feel");
-  currentRealFeel.innerHTML = `${realFeel}`;
+  let cityrealFeel = Math.round(response.data.main.feels_like);
+  let citycurrentRealFeel = document.querySelector("#real-feel");
+  citycurrentRealFeel.innerHTML = `${cityrealFeel}`;
   //humidity
-  let humidity = response.data.main.humidity;
-  let currentHumidity = document.querySelector("#humidity");
-  currentHumidity.innerHTML = `${humidity}`;
+  let cityhumidity = response.data.main.humidity;
+  let citycurrentHumidity = document.querySelector("#humidity");
+  citycurrentHumidity.innerHTML = `${cityhumidity}`;
   //wind
-  let windSpeed = response.data.wind.speed;
-  let currentWindSpeed = document.querySelector("#wind-speed");
-  currentWindSpeed.innerHTML = `${windSpeed}`;
+  let citywindSpeed = response.data.wind.speed;
+  let citycurrentWindSpeed = document.querySelector("#wind-speed");
+  citycurrentWindSpeed.innerHTML = `${citywindSpeed}`;
 
   //pressure
-  let pressure = response.data.main.pressure;
-  let currentPressure = document.querySelector("#pressure");
-  currentPressure.innerHTML = `${pressure}`;
+  let citypressure = response.data.main.pressure;
+  let citycurrentPressure = document.querySelector("#pressure");
+  citycurrentPressure.innerHTML = `${citypressure}`;
+  console.log(response.data.weather[0].description);
+  //weather description
+   let cityweatherDescription = document.querySelector("#weather-description");
+   cityweatherDescription.innerHTML = `${response.data.weather[0].description}`;
 }
 //done get weather data from the api
 function getTemp(event) {
@@ -105,7 +109,10 @@ function showCurrentPositionTemperature(response) {
   console.log(response.data.name);
   let myLocationCity = document.querySelector("#current-city");
   myLocationCity.innerHTML = `${response.data.name}`;
-
+  //weather description
+  console.log(response.data.weather[0].description);
+  let weatherDescription = document.querySelector("#weather-description");
+  weatherDescription.innerHTML = `${response.data.weather[0].description}`;
   //real feel
   let locationrealFeel = Math.round(response.data.main.feels_like);
   let currentlocationRealFeel = document.querySelector("#real-feel");
@@ -118,11 +125,14 @@ function showCurrentPositionTemperature(response) {
   let locationwindSpeed = response.data.wind.speed;
   let currentlocationWindSpeed = document.querySelector("#wind-speed");
   currentlocationWindSpeed.innerHTML = `${locationwindSpeed}`;
-
   //pressure
   let locationpressure = response.data.main.pressure;
   let currentlocationPressure = document.querySelector("#pressure");
   currentlocationPressure.innerHTML = `${locationpressure}`;
+  //weather description
+  console.log(response.data.weather[0].description);
+  let locationweatherDescription = document.querySelector("#weather-description");
+  locationweatherDescription.innerHTML = `${response.data.weather[0].description}`;
 }
 function myPosition(position) {
   console.log(position);

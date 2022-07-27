@@ -43,8 +43,14 @@
 .currentIcon {
   margin-left: 5px;
   font-size: 60px;
-  margin-top: 30px;
+  margin-top: 20px;
   opacity: 0.9;
+}
+.weatherdescription{
+ text-transform: capitalize;
+ opacity: 0.4;
+  
+
 }
 .currentTemperature {
   display: inline-block;
@@ -110,7 +116,7 @@
 
 .currentCity {
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   margin-top: 0px;
   font-size: 25px;
   padding-top: 0px;
@@ -136,6 +142,7 @@ ul {
   height: 140px;
   text-align: center;
   margin: 10px;
+  margin-top: 0px;;
   padding-left: 12px;
   padding-right: 12px;
   background-color: rgb(207, 207, 207);
