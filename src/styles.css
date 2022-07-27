@@ -1,213 +1,213 @@
-.shadow {
-    background-image: url("image/background2.png");
-    width: 400px;
-    height: 665px;
-    padding-left: 0;
-    margin-top: 30px;
-  }
-  .appBackgroundSize {
-    width: 375px;
-    height: 640px;
-    border: 6px;
-    background-color: #f5f7f9;
-    border-color: #ffe900;
-    border-style: solid;
-    font-family: "Oswald", sans-serif;
-  }
-  .changeCity {
-    font-size: 12px;
-    border: none;
-    background: #ffe900;
-    margin-top: 11px;
-    margin-left: 50px;
-    width: 80px;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  }
-  
-  ::placeholder {
-    color: black;
-    position: relative;
-    left: 4px;
-  }
-  .changeCitySubmit {
-    border: none;
-    width: 20px;
-    background-color: #f5f7f9;
-    display: inline-block;
-    margin: 0px;
-    padding: 0px;
-  }
-  .currentIcon {
-    margin-left: 5px;
-    font-size: 60px;
-    margin-top: 30px;
-    opacity: 0.9;
-  }
-  .currentTemperature {
-    display: inline-block;
-    font-size: 60px;
-    font-weight: 400;
-  
-    border: none;
-    background: none;
-    padding: 0px;
-    margin-left: 3px;
-    height: 80px;
-    opacity: 0.9;
-  }
-  .currentTemperatureNew {
-    display: inline-block;
-    font-size: 60px;
-    font-weight: 400;
-  
-    border: none;
-    background: none;
-    padding: 0px;
-    margin-left: 3px;
-    height: 80px;
-    opacity: 0.9;
-  }
-  .celsiiFarenheit {
-    position: relative;
-    bottom: 29px;
-    right: 14px;
-    display: inline;
-    font-size: 20px;
-  }
-  .farengeit {
-    color: black;
-  }
-  .farengeit:hover {
-    color: blue;
-    cursor: pointer;
-  }
-  .celsii:hover {
-    color: blue;
-    cursor: pointer;
-  }
-  
-  .currentWeather {
-    margin-left: 20px;
-    width: 160px;
-  }
-  .dateAndTime {
-    margin-left: 5px;
-  }
-  .currentTime {
-    opacity: 0.6;
-    font-weight: 400;
-  }
-  .week,
-  .currentDate {
-    display: inline-block;
-    opacity: 0.6;
-    font-weight: 400;
-    margin-bottom: 0px;
-  }
-  
-  .currentCity {
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    margin-top: 0px;
-    font-size: 25px;
-    padding-top: 0px;
-    text-decoration: underline;
-    text-decoration-color: #ffe900;
-    text-decoration-thickness: 6px;
-  }
-  
-  .realFeelPrecipitationlWindHumidity {
-    width: 150px;
-    margin-top: 134px;
-    margin-left: 30px;
-    opacity: 0.8;
-  }
-  ul {
-    list-style: none;
-    padding-left: 0px;
-    font-weight: 300;
-  }
-  .weekWeather {
-    position: relative;
-    top: 145px;
-    height: 140px;
-    text-align: center;
-    margin: 10px;
-    padding-left: 12px;
-    padding-right: 12px;
-    background-color: rgb(207, 207, 207);
-  }
-  .weekWeatherColumn {
-    height: 138px;
-    margin: 1px;
-    background-color: #f5f7f9;
-  }
-  .dayWeek {
-    font-size: 20px;
-    text-decoration: solid;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-decoration-color: #ffe900;
-    opacity: 0.9;
-  }
-  .dateWeek {
-    font-size: 10px;
-  }
-  .weatherIconWeek {
-    margin-top: 5px;
-    font-size: 25px;
-  }
-  .temperatureWeek {
-    margin-top: 8px;
-    opacity: 0.8;
-  }
-  .contacts {
-    position: relative;
-    top: 2px;
-    margin-top: 10px;
-    opacity: 0.3;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    color: black;
-    transition: all 200ms ease-in-out;
-  }
-  .contacts:hover {
-    opacity: 0.6;
-    cursor: pointer;
-  }
-  .linkedin,
-  .instagram {
-    color: black;
-  }
-  .linkedin:hover {
-    color: blue;
-    cursor: pointer;
-  }
-  .instagram:hover {
-    color: #d22e82;
-    opacity: 1;
-    cursor: pointer;
-  }
-  .line {
-    margin: 0;
-    margin-left: 11px;
-    width: 270px;
-  }
-  
-  .myLocation {
-    width: 90px;
-    padding-left: 0px;
-  
-    margin-left: 67px;
-    margin-right: 0px;
-    margin-top: 0px;
-    font-size: 12px;
-    background-color: none;
-    border: none;
-  }
-  .myLocation:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-decoration-color: black;
-  }
-  
+.shadow, .container {
+  background:100% url("image.background2");
+  width: 407px;
+  height: 665px;
+  padding-left: 0;
+  padding-right: 0px;
+  margin-top: 30px;
+}
+.appBackgroundSize {
+  width: 375px;
+  height: 640px;
+  border: 6px;
+  background-color: #f5f7f9;
+  border-color: #ffe900;
+  border-style: solid;
+  font-family: "Oswald", sans-serif;
+}
+.changeCity {
+  font-size: 12px;
+  border: none;
+  background: #ffe900;
+  margin-top: 11px;
+  margin-left: 50px;
+  width: 80px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+::placeholder {
+  color: black;
+  position: relative;
+  left: 4px;
+}
+.changeCitySubmit {
+  border: none;
+  width: 20px;
+  background-color: #f5f7f9;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+}
+.currentIcon {
+  margin-left: 5px;
+  font-size: 60px;
+  margin-top: 30px;
+  opacity: 0.9;
+}
+.currentTemperature {
+  display: inline-block;
+  font-size: 60px;
+  font-weight: 400;
+
+  border: none;
+  background: none;
+  padding: 0px;
+  margin-left: 3px;
+  height: 80px;
+  opacity: 0.9;
+}
+.currentTemperatureNew {
+  display: inline-block;
+  font-size: 60px;
+  font-weight: 400;
+
+  border: none;
+  background: none;
+  padding: 0px;
+  margin-left: 3px;
+  height: 80px;
+  opacity: 0.9;
+}
+.celsiiFarenheit {
+  position: relative;
+  bottom: 29px;
+  right: 14px;
+  display: inline;
+  font-size: 20px;
+}
+.farengeit {
+  color: black;
+}
+.farengeit:hover {
+  color: blue;
+  cursor: pointer;
+}
+.celsii:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.currentWeather {
+  margin-left: 20px;
+  width: 160px;
+}
+.dateAndTime {
+  margin-left: 5px;
+}
+.currentTime {
+  opacity: 0.6;
+  font-weight: 400;
+}
+.week,
+.currentDate {
+  display: inline-block;
+  opacity: 0.6;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
+.currentCity {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  font-size: 25px;
+  padding-top: 0px;
+  text-decoration: underline;
+  text-decoration-color: #ffe900;
+  text-decoration-thickness: 6px;
+}
+
+.realFeelPrecipitationlWindHumidity {
+  width: 150px;
+  margin-top: 134px;
+  margin-left: 30px;
+  opacity: 0.8;
+}
+ul {
+  list-style: none;
+  padding-left: 0px;
+  font-weight: 300;
+}
+.weekWeather {
+  position: relative;
+  top: 145px;
+  height: 140px;
+  text-align: center;
+  margin: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: rgb(207, 207, 207);
+}
+.weekWeatherColumn {
+  height: 138px;
+  margin: 1px;
+  background-color: #f5f7f9;
+}
+.dayWeek {
+  font-size: 20px;
+  text-decoration: solid;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #ffe900;
+  opacity: 0.9;
+}
+.dateWeek {
+  font-size: 10px;
+}
+.weatherIconWeek {
+  margin-top: 5px;
+  font-size: 25px;
+}
+.temperatureWeek {
+  margin-top: 8px;
+  opacity: 0.8;
+}
+.contacts {
+  position: relative;
+  top: 2px;
+  margin-top: 10px;
+  opacity: 0.3;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: black;
+  transition: all 200ms ease-in-out;
+}
+.contacts:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.linkedin,
+.instagram {
+  color: black;
+}
+.linkedin:hover {
+  color: blue;
+  cursor: pointer;
+}
+.instagram:hover {
+  color: #d22e82;
+  opacity: 1;
+  cursor: pointer;
+}
+.line {
+  margin: 0;
+  margin-left: 11px;
+  width: 270px;
+}
+
+.myLocation {
+  width: 90px;
+  padding-left: 0px;
+
+  margin-left: 67px;
+  margin-right: 0px;
+  margin-top: 0px;
+  font-size: 12px;
+  background-color: none;
+  border: none;
+}
+.myLocation:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: black;
+}
