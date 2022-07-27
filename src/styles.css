@@ -5,6 +5,7 @@
   padding-left: 0;
   padding-right: 0px;
   margin-top: 30px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .appBackgroundSize {
   width: 375px;
@@ -14,6 +15,7 @@
   border-color: #ffe900;
   border-style: solid;
   font-family: "Oswald", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .changeCity {
   font-size: 12px;
@@ -22,7 +24,7 @@
   margin-top: 11px;
   margin-left: 50px;
   width: 80px;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 ::placeholder {
@@ -137,6 +139,7 @@ ul {
   padding-left: 12px;
   padding-right: 12px;
   background-color: rgb(207, 207, 207);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .weekWeatherColumn {
   height: 138px;
@@ -205,9 +208,11 @@ ul {
   font-size: 12px;
   background-color: none;
   border: none;
+  
 }
 .myLocation:hover {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-decoration-color: black;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
