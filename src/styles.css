@@ -219,3 +219,12 @@ ul {
 .opensourse{
   font-size:8px;
 }
+.githublink{
+  text-decoration: none;
+  color: black;
+  opacity: 0,3;
+}
+.githublink:hover{
+  color: #d22e82;
+  opacity: 0,3;
+}
