@@ -58,72 +58,65 @@ function changeCity(event) {
 //done,get response from axis and change HTML temperature...
   function searchTemperature(response) {
 //temperature
-  let citycelsiiTemperature = Math.round(response.data.main.temp);
   let citycurrentTemperature = document.querySelector("#current-temperature");
-  citycurrentTemperature.innerHTML = `${citycelsiiTemperature}`;
+  citycurrentTemperature.innerHTML = `${Math.round(response.data.main.temp)}`;
 //real feel
-  let cityrealFeel = Math.round(response.data.main.feels_like);
   let citycurrentRealFeel = document.querySelector("#real-feel");
-  citycurrentRealFeel.innerHTML = `${cityrealFeel}`;
+  citycurrentRealFeel.innerHTML = `${Math.round(response.data.main.feels_like)}`;
 //humidity
-  let cityhumidity = response.data.main.humidity;
   let citycurrentHumidity = document.querySelector("#humidity");
-  citycurrentHumidity.innerHTML = `${cityhumidity}`;
+  citycurrentHumidity.innerHTML = `${response.data.main.humidity}`;
 //wind
-  let citywindSpeed = response.data.wind.speed;
   let citycurrentWindSpeed = document.querySelector("#wind-speed");
-  citycurrentWindSpeed.innerHTML = `${citywindSpeed}`;
-
+  citycurrentWindSpeed.innerHTML = `${response.data.wind.speed}`;
 //pressure
-  let citypressure = response.data.main.pressure;
   let citycurrentPressure = document.querySelector("#pressure");
-  citycurrentPressure.innerHTML = `${citypressure}`;
-  console.log(response.data.weather[0].description);
+  citycurrentPressure.innerHTML = `${response.data.main.pressure}`;
 //weather description
    let cityweatherDescription = document.querySelector("#weather-description");
    cityweatherDescription.innerHTML = `${response.data.weather[0].description}`;
 //weather icon update
   let locationIdIcon = response.data.weather[0].icon;
- console.log(response.data.weather[0].icon);
-  if (locationIdIcon==="01d"){document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-sun");
-      } else {
-    if (locationIdIcon==="01n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-moon");
-      } else {
-    if (locationIdIcon==="02d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-sun");
-      } else {
-    if (locationIdIcon==="02n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-moon");
-      } else {
-    if  (locationIdIcon==="03d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud");
-      } else {
-    if (locationIdIcon==="03n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud");  
-    } else {
-      if (locationIdIcon==="04d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-sun");  
-    } else {
-      if (locationIdIcon==="04n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-moon");  
-    } else {
-      if (locationIdIcon==="09d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-showers-heavy");  
-    } else {
-      if (locationIdIcon==="09n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-moon-rain");  
-    } else {
-      if (locationIdIcon==="10d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-sun-rain");  
-    } else {
-      if (locationIdIcon==="10n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-rain");  
-    } else {
-      if (locationIdIcon==="11d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-bolt");  
-    } else {
-      if (locationIdIcon==="11n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-bolt");  
-    } else {
-      if (locationIdIcon==="13d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-snowflake");  
-    } else {
-      if (locationIdIcon==="13n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-snowflake");  
-    } else {
-      if (locationIdIcon==="50d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-smog");  
-    } else {
-      if (locationIdIcon==="50n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-smog");  
-    }}}}}}}}}}}}}}}}}}
- 
+  let weatherIcon = document.querySelector("#current-city-weather-icon");
+  weatherIcon.classList = "fa-solid";
+  if (locationIdIcon === "01d") {
+    weatherIcon.classList.add("fa-sun");
+  } else if (locationIdIcon === "01n") {
+    weatherIcon.classList.add("fa-moon");
+  } else if (locationIdIcon === "02d") {
+    weatherIcon.classList.add("fa-cloud-sun");
+  } else if (locationIdIcon === "02n") {
+    weatherIcon.classList.add("fa-cloud-moon");
+  } else if (locationIdIcon === "03d") {
+    weatherIcon.classList.add("fa-cloud");
+  } else if (locationIdIcon === "03n") {
+    weatherIcon.classList.add("fa-cloud");
+  } else if (locationIdIcon === "04d") {
+    weatherIcon.classList.add("fa-cloud-sun");
+  } else if (locationIdIcon === "04n") {
+    weatherIcon.classList.add("fa-cloud-moon");
+  } else if (locationIdIcon === "09d") {
+    weatherIcon.classList.add("fa-cloud-showers-heavy");
+  } else if (locationIdIcon === "09n") {
+    weatherIcon.classList.add("fa-cloud-moon-rain");
+  } else if (locationIdIcon === "10d") {
+    weatherIcon.classList.add("fa-cloud-sun-rain");
+  } else if (locationIdIcon === "10n") {
+    weatherIcon.classList.add("fa-cloud-rain");
+  } else if (locationIdIcon === "11d") {
+    weatherIcon.classList.add("fa-cloud-bolt");
+  } else if (locationIdIcon === "11n") {
+    weatherIcon.classList.add("fa-cloud-bolt");
+  } else if (locationIdIcon === "13d") {
+    weatherIcon.classList.add("fa-snowflake");
+  } else if (locationIdIcon === "13n") {
+    weatherIcon.classList.add("fa-snowflake");
+  } else if (locationIdIcon === "50d") {
+    weatherIcon.classList.add("fa-smog");
+  } else if (locationIdIcon === "50n") {
+    weatherIcon.classList.add("fa-smog");
+  }
  ;}
-
 //done get weather data from the api
 function getTemp(event) {
   event.preventDefault();
@@ -133,19 +126,15 @@ function getTemp(event) {
   let searchlink = `https://api.openweathermap.org/data/2.5/weather?q=${citSearchValue}&appid=${apiKey}&units=metric`;
   axios.get(searchlink).then(searchTemperature);
 }
-
 let currentCity = document.querySelector("#change-city-form");
 currentCity.addEventListener("submit", changeCity);
 currentCity.addEventListener("submit", getTemp);
 
-///get temperature on current location button
-
-function showCurrentPositionTemperature(response) {
-  console.log(response);
+  //get temperature on current location button
+  function showCurrentPositionTemperature(response) {
   //location temperature
-  let currentPositionCelsiiTemperature = Math.round(response.data.main.temp);
   let showCurrentPositionCelsiiTemperature = document.querySelector("#current-temperature");
-  showCurrentPositionCelsiiTemperature.innerHTML = `${currentPositionCelsiiTemperature}`;
+  showCurrentPositionCelsiiTemperature.innerHTML = `${Math.round(response.data.main.temp)}`;
   //city on this geolocation
   let myLocationCity = document.querySelector("#current-city");
   myLocationCity.innerHTML = `${response.data.name}`;
@@ -153,65 +142,61 @@ function showCurrentPositionTemperature(response) {
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = `${response.data.weather[0].description}`;
   //real feel
-  let locationrealFeel = Math.round(response.data.main.feels_like);
   let currentlocationRealFeel = document.querySelector("#real-feel");
-  currentlocationRealFeel.innerHTML = `${locationrealFeel}`;
+  currentlocationRealFeel.innerHTML = `${Math.round(response.data.main.feels_like)}`;
   //humidity
-  let locationhumidity = response.data.main.humidity;
   let currentlocationHumidity = document.querySelector("#humidity");
-  currentlocationHumidity.innerHTML = `${locationhumidity}`;
+  currentlocationHumidity.innerHTML = `${response.data.main.humidity}`;
   //wind
-  let locationwindSpeed = response.data.wind.speed;
   let currentlocationWindSpeed = document.querySelector("#wind-speed");
-  currentlocationWindSpeed.innerHTML = `${locationwindSpeed}`;
+  currentlocationWindSpeed.innerHTML = `${response.data.wind.speed}`;
   //pressure
-  let locationpressure = response.data.main.pressure;
   let currentlocationPressure = document.querySelector("#pressure");
-  currentlocationPressure.innerHTML = `${locationpressure}`;
+  currentlocationPressure.innerHTML = `${response.data.main.pressure}`;
   //weather description
   let locationweatherDescription = document.querySelector("#weather-description");
   locationweatherDescription.innerHTML = `${response.data.weather[0].description}`;
-
-//icon
-let locationIdIcon1 = response.data.weather[0].icon;
-
-  if (locationIdIcon1==="01d"){document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-sun");
-      } else {
-    if (locationIdIcon1==="01n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-moon");
-      } else {
-    if (locationIdIcon1==="02d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-sun");
-      } else {
-    if (locationIdIcon1==="02n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-moon");
-      } else {
-    if  (locationIdIcon1==="03d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud");
-      } else {
-    if (locationIdIcon1==="03n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud");  
-    } else {
-      if (locationIdIcon1==="04d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-sun");  
-    } else {
-      if (locationIdIcon1==="04n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-moon");  
-    } else {
-      if (locationIdIcon1==="09d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-showers-heavy");  
-    } else {
-      if (locationIdIcon1==="09n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-moon-rain");  
-    } else {
-      if (locationIdIcon1==="10d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-sun-rain");  
-    } else {
-      if (locationIdIcon1==="10n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-rain");  
-    } else {
-      if (locationIdIcon1==="11d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-bolt");  
-    } else {
-      if (locationIdIcon1==="11n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-cloud-bolt");  
-    } else {
-      if (locationIdIcon1==="13d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-snowflake");  
-    } else {
-      if (locationIdIcon1==="13n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-snowflake");  
-    } else {
-      if (locationIdIcon1==="50d") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-smog");  
-    } else {
-      if (locationIdIcon1==="50n") {document.querySelector("#current-city-weather-icon").classList.replace("fa-cloud-bolt","fa-smog");  
-    }}}}}}}}}}}}}}}}}}
- 
+//changing the icon
+  let locationIdIcon1 = response.data.weather[0].icon;
+  let weatherIcon1 = document.querySelector("#current-city-weather-icon");
+  weatherIcon1.classList = "fa-solid";
+  if (locationIdIcon1 === "01d") {
+    weatherIcon1.classList.add("fa-sun");
+  } else if (locationIdIcon1 === "01n") {
+    weatherIcon1.classList.add("fa-moon");
+  } else if (locationIdIcon1 === "02d") {
+    weatherIcon1.classList.add("fa-cloud-sun");
+  } else if (locationIdIcon1 === "02n") {
+    weatherIcon1.classList.add("fa-cloud-moon");
+  } else if (locationIdIcon1 === "03d") {
+    weatherIcon1.classList.add("fa-cloud");
+  } else if (locationIdIcon1 === "03n") {
+    weatherIcon1.classList.add("fa-cloud");
+  } else if (1 === "04d") {
+    weatherIcon1.classList.add("fa-cloud-sun");
+  } else if (locationIdIcon1 === "04n") {
+    weatherIcon1.classList.add("fa-cloud-moon");
+  } else if (locationIdIconlocationIdIcon1 === "09d") {
+    weatherIcon1.classList.add("fa-cloud-showers-heavy");
+  } else if (locationIdIcon1 === "09n") {
+    weatherIcon1.classList.add("fa-cloud-moon-rain");
+  } else if (locationIdIcon1 === "10d") {
+    weatherIcon1.classList.add("fa-cloud-sun-rain");
+  } else if (locationIdIcon1 === "10n") {
+    weatherIcon1.classList.add("fa-cloud-rain");
+  } else if (locationIdIcon1 === "11d") {
+    weatherIcon1.classList.add("fa-cloud-bolt");
+  } else if (locationIdIcon1 === "11n") {
+    weatherIcon1.classList.add("fa-cloud-bolt");
+  } else if (locationIdIcon1 === "13d") {
+    weatherIcon1.classList.add("fa-snowflake");
+  } else if (locationIdIcon1 === "13n") {
+    weatherIcon1.classList.add("fa-snowflake");
+  } else if (locationIdIcon1 === "50d") {
+    weatherIcon1.classList.add("fa-smog");
+  } else if (locationIdIcon1 === "50n") {
+    weatherIcon1.classList.add("fa-smog");
+  }
   
   };
 function myPosition(position) {
