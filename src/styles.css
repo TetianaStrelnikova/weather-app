@@ -1,12 +1,4 @@
-.shadow, .container {
-  background:url("src\image\background2.png");
-  width: 407px;
-  height: 665px;
-  padding-left: 0;
-  padding-right: 0px;
-  margin-top: 30px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
+
 .appBackgroundSize {
   width: 375px;
   height: 640px;
@@ -15,6 +7,15 @@
   border-color: #ffe900;
   border-style: solid;
   font-family: "Oswald", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.shadow, .container {
+  background:url("src/background/background2.png");
+  width: 407px;
+  height: 665px;
+  padding-left: 0;
+  padding-right: 0px;
+  margin-top: 30px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .changeCity {
