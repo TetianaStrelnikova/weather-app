@@ -44,7 +44,6 @@ function getMinutes(date) {
 }
 let newTime = document.querySelector("#current-time");
 newTime.innerHTML = `${getHours(date)}:${getMinutes(date)}`;
-
 //🕵city and temp
 
 //done, changes city to the city input value
@@ -54,12 +53,13 @@ function changeCity(event) {
   let newCity = document.querySelector("#current-city");
   newCity.innerHTML = `${currentCityInput.value}`;
 }
-
 //done,get response from axis and change HTML temperature...
   function searchTemperature(response) {
+
 //temperature
   let citycurrentTemperature = document.querySelector("#current-temperature");
   citycurrentTemperature.innerHTML = `${Math.round(response.data.main.temp)}`;
+  celsiiTemperatureForChangingFunction =Math.round(response.data.main.temp);
 //real feel
   let citycurrentRealFeel = document.querySelector("#real-feel");
   citycurrentRealFeel.innerHTML = `${Math.round(response.data.main.feels_like)}`;
@@ -117,6 +117,8 @@ function changeCity(event) {
     weatherIcon.classList.add("fa-smog");
   }
  ;}
+
+ let celsiiTemperatureForChangingFunction = null;
 //done get weather data from the api
 function getTemp(event) {
   event.preventDefault();
@@ -135,7 +137,7 @@ currentCity.addEventListener("submit", getTemp);
   //location temperature
   let showCurrentPositionCelsiiTemperature = document.querySelector("#current-temperature");
   showCurrentPositionCelsiiTemperature.innerHTML = `${Math.round(response.data.main.temp)}`;
-  //city on this geolocation
+  celsiiTemperatureForChangingFunction = Math.round(response.data.main.temp);
   let myLocationCity = document.querySelector("#current-city");
   myLocationCity.innerHTML = `${response.data.name}`;
   //weather description
@@ -219,16 +221,10 @@ locationButton.addEventListener("click", getmyPosition);
 
 function changeToFarenheit(event) {
   event.preventDefault();
-  let celsiiTemperature = 59;
-  let farenheitTemperature = Math.round((celsiiTemperature * 9) / 5 + 32);
-  console.log(farenheitTemperature);
-  let currentFarenheitTemperature = document.querySelector(
-    "#current-temperature"
-  );
+  let farenheitTemperature = Math.round((celsiiTemperatureForChangingFunction * 9) / 5 + 32);
+  let currentFarenheitTemperature = document.querySelector("#current-temperature");
   currentFarenheitTemperature.innerHTML = `${farenheitTemperature}`;
-  let currentFarenheitTemperatureClass = document.querySelector(
-    ".currentTemperature"
-  );
+  let currentFarenheitTemperatureClass = document.querySelector(".currentTemperature");
   currentFarenheitTemperatureClass.classList.remove("currentTemperature");
   currentFarenheitTemperatureClass.classList.add("currentTemperatureNew");
 }
