@@ -72,13 +72,20 @@
   display: inline;
   font-size: 20px;
 }
-.farengeit {
+.farenheit {
   color: black;
 }
-.farengeit:hover {
+.farenheit:hover {
   color: #d22e82;
   cursor: default;
 }
+.farenheitNew{
+  text-decoration: underline;
+  text-decoration-color: #ffe900;
+  text-decoration-thickness: 3px;}
+.celsiiNew{text-decoration: underline;
+  text-decoration-color: #ffe900;
+  text-decoration-thickness: 3px;};
 .celsii:hover {
   color: #d22e82;
   cursor: default;

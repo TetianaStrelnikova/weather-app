@@ -224,14 +224,23 @@ function changeToFarenheit(event) {
   let farenheitTemperature = Math.round((celsiiTemperatureForChangingFunction * 9) / 5 + 32);
   let currentFarenheitTemperature = document.querySelector("#current-temperature");
   currentFarenheitTemperature.innerHTML = `${farenheitTemperature}`;
+  let ferenheitNew = document.querySelector("#farenheit");
+  ferenheitNew.classList.replace("farenheit","farenheitNew");
+  let celsiiNew1 = document.querySelector("#celsii");
+  celsiiNew1.classList.replace("celsiiNew","celsii");
 }
 let farenheitButton = document.querySelector("#farenheit");
 farenheitButton.addEventListener("click", changeToFarenheit);
 
 function changeToCelsii(event) {
   event.preventDefault();
+  
   let currentCelsiiTemperature = document.querySelector("#current-temperature");
   currentCelsiiTemperature.innerHTML = `${celsiiTemperatureForChangingFunction}`;
+  let ferenheitNew1 = document.querySelector("#farenheit");
+  ferenheitNew1.classList.replace("farenheitNew","farenheit");
+  let celsiiNew = document.querySelector("#celsii");
+  celsiiNew.classList.replace("celsii","celsiiNew");
 }
 
 let celsiiButton = document.querySelector("#celsii");
