@@ -76,12 +76,12 @@
   color: black;
 }
 .farengeit:hover {
-  color: blue;
-  cursor: pointer;
+  color: #d22e82;
+  cursor: default;
 }
 .celsii:hover {
-  color: blue;
-  cursor: pointer;
+  color: #d22e82;
+  cursor: default;
 }
 
 .currentWeather {

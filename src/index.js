@@ -225,17 +225,13 @@ function changeToFarenheit(event) {
   let currentFarenheitTemperature = document.querySelector("#current-temperature");
   currentFarenheitTemperature.innerHTML = `${farenheitTemperature}`;
 }
-
 let farenheitButton = document.querySelector("#farenheit");
 farenheitButton.addEventListener("click", changeToFarenheit);
 
 function changeToCelsii(event) {
   event.preventDefault();
-  let fakeFarenheitTemperature = 85;
-  let celsiiTemperature = Math.round(((fakeFarenheitTemperature - 32) * 5) / 9);
-  console.log(celsiiTemperature);
   let currentCelsiiTemperature = document.querySelector("#current-temperature");
-  currentCelsiiTemperature.innerHTML = `${celsiiTemperature}`;
+  currentCelsiiTemperature.innerHTML = `${celsiiTemperatureForChangingFunction}`;
 }
 
 let celsiiButton = document.querySelector("#celsii");
