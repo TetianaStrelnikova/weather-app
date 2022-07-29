@@ -224,9 +224,6 @@ function changeToFarenheit(event) {
   let farenheitTemperature = Math.round((celsiiTemperatureForChangingFunction * 9) / 5 + 32);
   let currentFarenheitTemperature = document.querySelector("#current-temperature");
   currentFarenheitTemperature.innerHTML = `${farenheitTemperature}`;
-  let currentFarenheitTemperatureClass = document.querySelector(".currentTemperature");
-  currentFarenheitTemperatureClass.classList.remove("currentTemperature");
-  currentFarenheitTemperatureClass.classList.add("currentTemperatureNew");
 }
 
 let farenheitButton = document.querySelector("#farenheit");
