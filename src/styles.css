@@ -83,10 +83,18 @@
   text-decoration: underline;
   text-decoration-color: #ffe900;
   text-decoration-thickness: 3px;}
+  .farenheitNew:hover {
+    color: #d22e82;
+    cursor: default;
+  }
 .celsiiNew{text-decoration: underline;
   text-decoration-color: #ffe900;
   text-decoration-thickness: 3px;};
-.celsii:hover {
+  .celsiiNew:hover {
+    color: #d22e82;
+    cursor: default;
+  }
+  .celsii:hover {
   color: #d22e82;
   cursor: default;
 }

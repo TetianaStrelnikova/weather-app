@@ -164,45 +164,44 @@ currentCity.addEventListener("submit", getTemp);
   weatherIcon1.classList = "fa-solid";
   if (locationIdIcon1 === "01d") {
     weatherIcon1.classList.add("fa-sun");
-  } else if (locationIdIcon1 === "01n") {
+    } else if (locationIdIcon1 === "01n") {
     weatherIcon1.classList.add("fa-moon");
-  } else if (locationIdIcon1 === "02d") {
+    } else if (locationIdIcon1 === "02d") {
     weatherIcon1.classList.add("fa-cloud-sun");
-  } else if (locationIdIcon1 === "02n") {
+    } else if (locationIdIcon1 === "02n") {
     weatherIcon1.classList.add("fa-cloud-moon");
-  } else if (locationIdIcon1 === "03d") {
+    } else if (locationIdIcon1 === "03d") {
     weatherIcon1.classList.add("fa-cloud");
-  } else if (locationIdIcon1 === "03n") {
+    } else if (locationIdIcon1 === "03n") {
     weatherIcon1.classList.add("fa-cloud");
-  } else if (1 === "04d") {
+    } else if (1 === "04d") {
     weatherIcon1.classList.add("fa-cloud-sun");
-  } else if (locationIdIcon1 === "04n") {
+    } else if (locationIdIcon1 === "04n") {
     weatherIcon1.classList.add("fa-cloud-moon");
-  } else if (locationIdIconlocationIdIcon1 === "09d") {
+     } else if (locationIdIconlocationIdIcon1 === "09d") {
     weatherIcon1.classList.add("fa-cloud-showers-heavy");
-  } else if (locationIdIcon1 === "09n") {
+    } else if (locationIdIcon1 === "09n") {
     weatherIcon1.classList.add("fa-cloud-moon-rain");
-  } else if (locationIdIcon1 === "10d") {
+     } else if (locationIdIcon1 === "10d") {
     weatherIcon1.classList.add("fa-cloud-sun-rain");
-  } else if (locationIdIcon1 === "10n") {
+     } else if (locationIdIcon1 === "10n") {
     weatherIcon1.classList.add("fa-cloud-rain");
-  } else if (locationIdIcon1 === "11d") {
+    } else if (locationIdIcon1 === "11d") {
     weatherIcon1.classList.add("fa-cloud-bolt");
-  } else if (locationIdIcon1 === "11n") {
+    } else if (locationIdIcon1 === "11n") {
     weatherIcon1.classList.add("fa-cloud-bolt");
-  } else if (locationIdIcon1 === "13d") {
+    } else if (locationIdIcon1 === "13d") {
     weatherIcon1.classList.add("fa-snowflake");
-  } else if (locationIdIcon1 === "13n") {
+    } else if (locationIdIcon1 === "13n") {
     weatherIcon1.classList.add("fa-snowflake");
-  } else if (locationIdIcon1 === "50d") {
+     } else if (locationIdIcon1 === "50d") {
     weatherIcon1.classList.add("fa-smog");
-  } else if (locationIdIcon1 === "50n") {
+    } else if (locationIdIcon1 === "50n") {
     weatherIcon1.classList.add("fa-smog");
-  }
+     }
   
   };
 function myPosition(position) {
-  console.log(position);
   let lat = Math.round(position.coords.latitude);
   let lon = Math.round(position.coords.longitude);
   let apiKey = "1001fa4e051816eb8cb147e5ae4e09c6";
