@@ -45,15 +45,34 @@ function getMinutes(date) {
 let newTime = document.querySelector("#current-time");
 newTime.innerHTML = `${getHours(date)}:${getMinutes(date)}`;
 //🕵city and temp
-
-//done, changes city to the city input value
+//forecast
+function displayForecast(){
+ let forecastElement = document.querySelector("#forecast");
+ let forecastHTML = `<div class="row">` ;
+ let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+ forecastDays.forEach(
+ function(forecastDay){
+  forecastHTML= forecastHTML + `
+   <div class="col weekWeatherColumn">
+   <div class="dayWeek">${forecastDay}</div>
+   <div class="dateWeek">09/06</div>
+   <div class="weatherIconWeek">
+    <i class="fa-solid fa-cloud-sun"></i>
+   </div>
+   <div class="temperatureWeek"><span class="min">21°</span>/<span class="max">22°</span></div>
+  </div>`;}
+  )
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML =   forecastHTML;
+};
+// changes city to the city input value
 function changeCity(event) {
   event.preventDefault();
   let currentCityInput = document.querySelector("#change-city-input");
   let newCity = document.querySelector("#current-city");
   newCity.innerHTML = `${currentCityInput.value}`;
 }
-//done,get response from axis and change HTML temperature...
+//get response from axis and change HTML temperature...
   function searchTemperature(response) {
 
 //temperature
@@ -116,6 +135,9 @@ function changeCity(event) {
   } else if (locationIdIcon === "50n") {
     weatherIcon.classList.add("fa-smog");
   }
+//forecast
+displayForecast();
+  
  ;}
 
  let celsiiTemperatureForChangingFunction = null;
@@ -199,7 +221,8 @@ currentCity.addEventListener("submit", getTemp);
     } else if (locationIdIcon1 === "50n") {
     weatherIcon1.classList.add("fa-smog");
      }
-  
+  //forecast
+     displayForecast();
   };
 function myPosition(position) {
   let lat = Math.round(position.coords.latitude);
@@ -246,5 +269,4 @@ let celsiiButton = document.querySelector("#celsii");
 celsiiButton.addEventListener("click", changeToCelsii);
 
 
-
-    
+displayForecast();
