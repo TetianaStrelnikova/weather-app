@@ -51,7 +51,6 @@ function formateForecastDay(datestamp){
   let date = new Date(datestamp*1000);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day =date.getDay();
-  console.log(day)
   return days[day];
 };
 
@@ -78,7 +77,7 @@ function formateForecastDate(datestamp){
 function formateForecastMonth(datestamp){
   let date = new Date(datestamp*1000);
   let dateNow = date.getDate();
-return dateNow;
+  return dateNow;
 };
 
 function formatForecastIcon(forecastIconId){
@@ -166,8 +165,8 @@ function updateForecast(forecast){
   let forecastDays = forecast.data.daily;
   forecastDays.forEach(
   function(forecastDay,index){
- if (index < 6 && index > 0 ){
-   forecastHTML= forecastHTML + `
+    if (index < 6 && index > 0 ){
+    forecastHTML= forecastHTML + `
     <div class="col weekWeatherColumn">
     <div class="dayWeek">${formateForecastDay(forecastDay.dt)}</div>
     <div class="dateWeek">${formateForecastDate(forecastDay.dt)}/${formateForecastMonth(forecastDay.dt)}</div>
@@ -175,7 +174,7 @@ function updateForecast(forecast){
      ${formatForecastIcon(forecastDay.weather[0].icon)}
     </div>
     <div class="temperatureWeek"><span class="min">${Math.round(forecastDay.temp.min)}°</span>/<span class="max">${Math.round(forecastDay.temp.max)}°</span></div>
-   </div>`;
+    </div>`;
  }})
    forecastHTML = forecastHTML + `</div>`;
    forecastElement.innerHTML =   forecastHTML; 
@@ -281,7 +280,6 @@ currentCity.addEventListener("submit", getTemp);
 
   //get temperature on current location button
   function showCurrentPositionTemperature(response) {
-    console.log(response);
   //location temperature
   let showCurrentPositionCelsiiTemperature = document.querySelector("#current-temperature");
   showCurrentPositionCelsiiTemperature.innerHTML = `${Math.round(response.data.main.temp)}`;
@@ -306,7 +304,7 @@ currentCity.addEventListener("submit", getTemp);
   //weather description
   let locationweatherDescription = document.querySelector("#weather-description");
   locationweatherDescription.innerHTML = `${response.data.weather[0].description}`;
-//changing the icon
+ //changing the icon
   let locationIdIcon1 = response.data.weather[0].icon;
   let weatherIcon1 = document.querySelector("#current-city-weather-icon");
   weatherIcon1.classList = "fa-solid";
