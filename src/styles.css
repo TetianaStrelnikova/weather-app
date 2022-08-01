@@ -11,6 +11,7 @@
 }
 .shadow, .container {
   background: url("../background/background2.png");
+  background-size: 100%;
   width: 407px;
   height: 665px;
   padding-left: 0;
