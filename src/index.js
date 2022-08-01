@@ -361,11 +361,14 @@ function getmyPosition(event) {
   navigator.geolocation.getCurrentPosition(myPosition);
 }
 
+
 let locationButton = document.querySelector("#my-location");
 locationButton.addEventListener("click", getmyPosition);
 
 //🙀change celsius to farenheit
+function getmyPositionReload()
 
+{navigator.geolocation.getCurrentPosition(myPosition);};
 function changeToFarenheit(event) {
   event.preventDefault();
   let farenheitTemperature = Math.round((celsiiTemperatureForChangingFunction * 9) / 5 + 32);
@@ -392,4 +395,5 @@ function changeToCelsii(event) {
 
 let celsiiButton = document.querySelector("#celsii");
 celsiiButton.addEventListener("click", changeToCelsii);
-getmyPosition();
+
+getmyPositionReload();
