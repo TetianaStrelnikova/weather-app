@@ -46,25 +46,38 @@ let newTime = document.querySelector("#current-time");
 newTime.innerHTML = `${getHours(date)}:${getMinutes(date)}`;
 //🕵city and temp
 //forecast
-function displayForecast(){
- let forecastElement = document.querySelector("#forecast");
- let forecastHTML = `<div class="row">` ;
- let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu"];
- forecastDays.forEach(
- function(forecastDay){
-  forecastHTML= forecastHTML + `
-   <div class="col weekWeatherColumn">
-   <div class="dayWeek">${forecastDay}</div>
-   <div class="dateWeek">09/06</div>
-   <div class="weatherIconWeek">
-    <i class="fa-solid fa-cloud-sun"></i>
-   </div>
-   <div class="temperatureWeek"><span class="min">21°</span>/<span class="max">22°</span></div>
-  </div>`;}
-  )
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML =   forecastHTML;
+function updateForecast(forecast){
+  console.log(forecast.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">` ;
+  let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  forecastDays.forEach(
+  function(forecastDay){
+   forecastHTML= forecastHTML + `
+    <div class="col weekWeatherColumn">
+    <div class="dayWeek">${forecastDay}</div>
+    <div class="dateWeek">09/06</div>
+    <div class="weatherIconWeek">
+     <i class="fa-solid fa-cloud-sun"></i>
+    </div>
+    <div class="temperatureWeek"><span class="min">°</span>/<span class="max">22°</span></div>
+   </div>`;}
+   )
+   forecastHTML = forecastHTML + `</div>`;
+   forecastElement.innerHTML =   forecastHTML;
+ };
+
+
+function displayForecast(coordinates){
+  let lon = coordinates.data.coord.lon;
+  let lat = coordinates.data.coord.lat;
+console.log(lon);
+console.log(lat);
+let apiCallKey = "1001fa4e051816eb8cb147e5ae4e09c6";
+let apiCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiCallKey}&units=metric`;
+axios.get(apiCall).then(updateForecast);
 };
+
 // changes city to the city input value
 function changeCity(event) {
   event.preventDefault();
@@ -135,8 +148,9 @@ function changeCity(event) {
   } else if (locationIdIcon === "50n") {
     weatherIcon.classList.add("fa-smog");
   }
+//get coordinates;
 //forecast
-displayForecast();
+displayForecast(response);
   
  ;}
 
@@ -156,6 +170,7 @@ currentCity.addEventListener("submit", getTemp);
 
   //get temperature on current location button
   function showCurrentPositionTemperature(response) {
+    console.log(response);
   //location temperature
   let showCurrentPositionCelsiiTemperature = document.querySelector("#current-temperature");
   showCurrentPositionCelsiiTemperature.innerHTML = `${Math.round(response.data.main.temp)}`;
@@ -222,7 +237,7 @@ currentCity.addEventListener("submit", getTemp);
     weatherIcon1.classList.add("fa-smog");
      }
   //forecast
-     displayForecast();
+   //  displayForecast();
   };
 function myPosition(position) {
   let lat = Math.round(position.coords.latitude);
@@ -269,4 +284,4 @@ let celsiiButton = document.querySelector("#celsii");
 celsiiButton.addEventListener("click", changeToCelsii);
 
 
-displayForecast();
+//displayForecast();
