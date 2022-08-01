@@ -166,7 +166,7 @@ function updateForecast(forecast){
   let forecastDays = forecast.data.daily;
   forecastDays.forEach(
   function(forecastDay,index){
- if (index < 5){
+ if (index < 6 && index > 0 ){
    forecastHTML= forecastHTML + `
     <div class="col weekWeatherColumn">
     <div class="dayWeek">${formateForecastDay(forecastDay.dt)}</div>
@@ -322,11 +322,11 @@ currentCity.addEventListener("submit", getTemp);
     weatherIcon1.classList.add("fa-cloud");
     } else if (locationIdIcon1 === "03n") {
     weatherIcon1.classList.add("fa-cloud");
-    } else if (1 === "04d") {
+    } else if (locationIdIcon1 === "04d") {
     weatherIcon1.classList.add("fa-cloud-sun");
     } else if (locationIdIcon1 === "04n") {
     weatherIcon1.classList.add("fa-cloud-moon");
-     } else if (locationIdIconlocationIdIcon1 === "09d") {
+     } else if (locationIdIcon1 === "09d") {
     weatherIcon1.classList.add("fa-cloud-showers-heavy");
     } else if (locationIdIcon1 === "09n") {
     weatherIcon1.classList.add("fa-cloud-moon-rain");
@@ -348,7 +348,8 @@ currentCity.addEventListener("submit", getTemp);
     weatherIcon1.classList.add("fa-smog");
      }
   //forecast
-   //  displayForecast();
+  displayForecast(response);
+ 
   };
 function myPosition(position) {
   let lat = Math.round(position.coords.latitude);
