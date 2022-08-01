@@ -392,6 +392,4 @@ function changeToCelsii(event) {
 
 let celsiiButton = document.querySelector("#celsii");
 celsiiButton.addEventListener("click", changeToCelsii);
-
-
-//displayForecast();
+getmyPosition();
