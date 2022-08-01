@@ -46,33 +46,144 @@ let newTime = document.querySelector("#current-time");
 newTime.innerHTML = `${getHours(date)}:${getMinutes(date)}`;
 //🕵city and temp
 //forecast
+
+function formateForecastDay(datestamp){
+  let date = new Date(datestamp*1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day =date.getDay();
+  console.log(day)
+  return days[day];
+};
+
+function formateForecastDate(datestamp){
+  let date = new Date(datestamp*1000);
+  let months = [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12"
+  ];
+  return months[date.getMonth()];
+
+};
+
+function formateForecastMonth(datestamp){
+  let date = new Date(datestamp*1000);
+  let dateNow = date.getDate();
+return dateNow;
+};
+
+function formatForecastIcon(forecastIconId){
+  let forcastIconId = forecastIconId
+  if (forcastIconId === "01d") {
+  let iconLink = `<i class="fa-solid fa-sun"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "01n") {
+  let iconLink = `<i class="fa-solid fa-moon"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "02d") {
+  let iconLink = `<i class="fa-solid fa-cloud-sun"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "02n") {
+  let iconLink =  `<i class="fa-solid fa-cloud-moon"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "03d") {
+  let iconLink = `<i class="fa-solid fa-cloud"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "03n") {
+  let iconLink = `<i class="fa-solid fa-cloud"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "04d") {
+  let iconLink = `<i class="fa-solid fa-cloud-sun"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "04n") {
+  let iconLink = `<i class="fa-solid fa-cloud-moon"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "09d") {
+  let iconLink = `<i class="fa-solid fa-cloud-showers-heavy"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "09n") {
+  let iconLink = `<i class="fa-solid fa-cloud-moon-rain"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "10d") {
+  let iconLink = `<i class="fa-solid fa-cloud-sun-rain"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "10n") {
+  let iconLink = `<i class="fa-solid fa-cloud-rain"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "11d") {
+  let iconLink = `<i class="fa-solid fa-cloud-bolt"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "11n") {
+  let iconLink =`<i class="fa-solid fa-cloud-bolt"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "13d") {
+  let iconLink = `<i class="fa-solid fa-snowflake"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "13n") {
+  let iconLink = `<i class="fa-solid fa-snowflake"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "50d") {
+  let iconLink = `<i class="fa-solid fa-smog"></i>`;
+  return iconLink}
+  
+  else if (forcastIconId === "50n") {
+  let iconLink = `<i class="fa-solid fa-smog"></i>`;
+  return iconLink}
+
+
+};
+
+
 function updateForecast(forecast){
-  console.log(forecast.data.daily);
+  //console.log(forecast.data); 
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">` ;
-  let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  let forecastDays = forecast.data.daily;
   forecastDays.forEach(
-  function(forecastDay){
+  function(forecastDay,index){
+ if (index < 5){
    forecastHTML= forecastHTML + `
     <div class="col weekWeatherColumn">
-    <div class="dayWeek">${forecastDay}</div>
-    <div class="dateWeek">09/06</div>
+    <div class="dayWeek">${formateForecastDay(forecastDay.dt)}</div>
+    <div class="dateWeek">${formateForecastDate(forecastDay.dt)}/${formateForecastMonth(forecastDay.dt)}</div>
     <div class="weatherIconWeek">
-     <i class="fa-solid fa-cloud-sun"></i>
+     ${formatForecastIcon(forecastDay.weather[0].icon)}
     </div>
-    <div class="temperatureWeek"><span class="min">°</span>/<span class="max">22°</span></div>
-   </div>`;}
-   )
+    <div class="temperatureWeek"><span class="min">${Math.round(forecastDay.temp.min)}°</span>/<span class="max">${Math.round(forecastDay.temp.max)}°</span></div>
+   </div>`;
+ }})
    forecastHTML = forecastHTML + `</div>`;
-   forecastElement.innerHTML =   forecastHTML;
+   forecastElement.innerHTML =   forecastHTML; 
  };
-
 
 function displayForecast(coordinates){
   let lon = coordinates.data.coord.lon;
   let lat = coordinates.data.coord.lat;
-console.log(lon);
-console.log(lat);
 let apiCallKey = "1001fa4e051816eb8cb147e5ae4e09c6";
 let apiCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiCallKey}&units=metric`;
 axios.get(apiCall).then(updateForecast);
