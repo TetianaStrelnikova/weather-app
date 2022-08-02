@@ -258,7 +258,7 @@ function changeCity(event) {
   } else if (locationIdIcon === "50n") {
     weatherIcon.classList.add("fa-smog");
   }
-//get coordinates;
+
 //forecast
 displayForecast(response);
   
@@ -268,6 +268,12 @@ displayForecast(response);
 //done get weather data from the api
 function getTemp(event) {
   event.preventDefault();
+  //change to celsii
+let ferenheit3 = document.querySelector("#farenheit");
+ferenheit3.classList.replace("farenheitNew","farenheit");
+let celsii3= document.querySelector("#celsii");
+celsii3.classList.replace("celsii","celsiiNew");
+
   let citySearch = document.querySelector("#change-city-input");
   let citSearchValue = `${citySearch.value}`;
   let apiKey = "1001fa4e051816eb8cb147e5ae4e09c6";
@@ -358,6 +364,12 @@ function myPosition(position) {
 }
 function getmyPosition(event) {
   event.preventDefault();
+  //change to celsii
+let ferenheit3 = document.querySelector("#farenheit");
+ferenheit3.classList.replace("farenheitNew","farenheit");
+let celsii3= document.querySelector("#celsii");
+celsii3.classList.replace("celsii","celsiiNew");
+
   navigator.geolocation.getCurrentPosition(myPosition);
 }
 
@@ -367,8 +379,8 @@ locationButton.addEventListener("click", getmyPosition);
 
 //🙀change celsius to farenheit
 function getmyPositionReload()
-
 {navigator.geolocation.getCurrentPosition(myPosition);};
+
 function changeToFarenheit(event) {
   event.preventDefault();
   let farenheitTemperature = Math.round((celsiiTemperatureForChangingFunction * 9) / 5 + 32);
